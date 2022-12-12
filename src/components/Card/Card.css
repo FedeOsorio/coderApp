@@ -1,0 +1,17 @@
+.card {
+    display: inline-block;
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.cardPrice {
+    right: 20vw;
+    bottom: 10vh;
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-top: 10px;
+}
