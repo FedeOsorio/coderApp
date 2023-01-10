@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
 
 const NavBar = () => {
+
     return (
-        <div className="navbar bg-base-100 flex justify-evenly fixed z-50">
+        <div className="navbar bg-base-100 flex justify-evenly z-50">
             <div className="flex justify-evenly">
                 <Link to={'/'}>
                     <li className="btn btn-ghost normal-case text-xl">INICIO</li>

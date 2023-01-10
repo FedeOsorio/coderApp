@@ -1,10 +1,14 @@
-import ItemCount from "./ItemCount";
+import { useCartContext } from '../../context/CartContext';
+import { ItemCount } from "./ItemCount";
 
 export const Item = ({ name, id, title, img, precio, stock, desc }) => {
 
-    console.log(name);
-    console.log(id);
-    console.log(title);
+    const { addNewProduct } = useCartContext()
+
+    const onAdd = (quantity) => {
+        const newProduct = {name, id, stock, quantity}
+        addNewProduct(newProduct)
+    }
     return (
         <>
             <div className="card card-compact bg-base-100 shadow-xl text ">
@@ -15,10 +19,10 @@ export const Item = ({ name, id, title, img, precio, stock, desc }) => {
                 <div>Cantidad de stock: {stock}</div>
             </div>
             <div>
-            <br></br>    
+                <br></br>
             </div>
             <div>
-                <ItemCount stock={stock} />
+                <ItemCount stock={stock} initial={0} onAdd={onAdd} />
             </div>
         </>
     )
