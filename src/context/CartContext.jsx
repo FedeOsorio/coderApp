@@ -56,7 +56,7 @@ export const CartContext = ({ children }) => {
             clearCart,
             deleteProduct,
             totalPrice,
-            totalProducts
+            totalProducts,
         }}>
             {children}
         </Contexto.Provider>

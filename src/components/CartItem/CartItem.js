@@ -1,37 +1,26 @@
 import { useContext } from 'react'
-import { CartContext } from '../../context/CartContext'
+import { CartContext, useCartContext } from '../../context/CartContext'
 
+export const CartItem = ({ product }) => {
+    //const { removeProduct } = useContext(CartContext)
 
-const CartItem = ({ id, name, quantity, price }) => {
-    const { removeItem } = useContext(CartContext)
-
-    const handleRemove = (id) => {
-        removeItem(id)
-    }
+    const { removeProduct} = useCartContext();
+    /* const handleRemove = (id) => {
+         removeItem(id)
+     }*/
 
     return (
-        <article className='CardCartItem'>
-            <header className="HeaderCartItem">
-                <h2 className="ItemHeaderCartItem">
-                    {name}
-                </h2>
-            </header>
-            <section className='ContainerItemCartItem'>
-                <p className="InfoCartItem">
-                    Cantidad: {quantity}
-                </p>
-                <p className="InfoCartItem">
-                    Precio x Unidad: ${price}
-                </p>
-            </section>           
-            <footer className='ItemFooterCartItem'>
-                <p className="InfoCartItem">
-                     Subtotal: ${price * quantity}
-                </p>
-                <button className='ButtonCartItem' onClick={() => handleRemove(id)}>Eliminar</button>
-            </footer>
-        </article>
+        <>
+            <div className='itemCart'>
+                <img src={''} alt={product.title} />
+                <div>
+                    <p>Titulo: {product.title}</p>
+                    <p>Cantidad: {product.quantity}</p>
+                    <p>Precio u.: {product.price}</p>
+                    <p>Subtotal: ${product.quantity*product.price}</p>
+                    <button onClick={() => removeProduct(product.id)}>Eliminar</button>
+                </div>
+            </div>
+        </>
     )
 }
-
-export default CartItem
