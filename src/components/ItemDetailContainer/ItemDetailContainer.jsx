@@ -10,7 +10,7 @@ export const ItemDetailContainer = () => {
     const { id } = useParams()
 
     const getItem = () => new Promise((resolve, reject) => {
-        setTimeout(() => resolve(products), 2000);
+        setTimeout(() => resolve(products), 1000);
     })
 
     useEffect(() => {

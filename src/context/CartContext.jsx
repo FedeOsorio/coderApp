@@ -31,17 +31,14 @@ export const CartContext = ({ children }) => {
         return cart.some(prod => prod.id === id)
     }
 
-    const deleteProduct = (product) => {
-        const newCart = cart.filter((currentProduct) => currentProduct.id !== product.id)
-        setCart(newCart)
-    }
+    const deleteProduct = (id) => setCart(cart.filter(delProduct => delProduct.id !== id))
 
     const clearCart = () => {
         setCart([])
     }
 
     const totalPrice = () => {
-        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
+        return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0)
     }
 
     const totalProducts = () => cart.reduce((acumulador, actProduct) => acumulador + actProduct.quantity, 0)

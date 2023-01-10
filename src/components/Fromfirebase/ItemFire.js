@@ -41,6 +41,8 @@ export const ItemFire = () => {
             }
 
             {items.map(i => <li key={i.id}>{i.title} - {i.price} - stock: {i.stock}</li>)}
+
+        
         </div>
     )
 

@@ -16,24 +16,6 @@ export const ItemCount = ({ stock, initial = 1, onAdd }) => {
     const subtractCounter = () => {
         count > initial && setCount(count - 1)
     }
-    /*
-
-    const clickEventSum = () => {
-        if (count < stock)
-            setCount(count => count + 1)
-    }
-
-    const clickEventRest = () => {
-        if (count > 0)
-            setCount(count - 1)
-    }
-*/
-    const [inStock, setStock] = useState(stock)
-
-    const clickStockRest = () => {
-        if (inStock > 0)
-            setStock(inStock - count)
-    }
 
     return (
         <>
@@ -46,7 +28,7 @@ export const ItemCount = ({ stock, initial = 1, onAdd }) => {
             </div>
             <div>
                 <Link to='/cart'>
-                <button className='btn mt-5 ml-2'>Finalizar compra</button>
+                    <button className='btn mt-5 ml-2'>Finalizar compra</button>
                 </Link>
             </div>
         </>

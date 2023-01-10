@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
+import petlogo from './petlogo.png';
 
 const NavBar = () => {
 
     return (
-        <div className="navbar bg-base-100 flex justify-evenly z-50">
+        <div className="navbar bg-base-100 flex justify-evenly shadow-md shadow-slate-400">
             <div className="flex justify-evenly">
                 <Link to={'/'}>
                     <li className="btn btn-ghost normal-case text-xl">INICIO</li>
@@ -33,9 +34,9 @@ const NavBar = () => {
                 </div>
                 <CartWidget></CartWidget>
                 <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-16 rounded-full">
-                            <img src="petlogo.png" />
+                    <label className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={petlogo} />
                         </div>
                     </label>
                 </div>

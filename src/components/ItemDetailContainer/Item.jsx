@@ -6,7 +6,7 @@ export const Item = ({ name, id, title, img, precio, stock, desc }) => {
     const { addNewProduct } = useCartContext()
 
     const onAdd = (quantity) => {
-        const newProduct = {name, id, stock, quantity}
+        const newProduct = {name, id, stock, quantity, precio, img}
         addNewProduct(newProduct)
     }
     return (
