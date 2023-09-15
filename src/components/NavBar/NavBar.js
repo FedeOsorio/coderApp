@@ -12,16 +12,8 @@ const NavBar = () => {
                 </Link>
             </div>
 
-            <Link to={'/mascotas'}>
-                <li className="btn btn-ghost rounded-lg">MASCOTAS</li>
-            </Link>
-
             <Link to={`/category/alimentos`}>
                 <li className="btn btn-ghost rounded-lg">Alimentos</li>
-            </Link>
-
-            <Link to={'/category/accesorios'}>
-                <li className="btn btn-ghost">Accesorios</li>
             </Link>
 
             <Link to={'/contacto'}>
